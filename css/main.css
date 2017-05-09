@@ -1,0 +1,26 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1f1f1f;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+}
+
+
+@media screen and (max-width: 992px) {
+
+
+}
