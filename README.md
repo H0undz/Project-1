@@ -1,2 +1,8 @@
-# Project-1
-Practice project 
+# Project 1
+### Practice project 
+
+* Practice
+* Enhance
+* Develop
+
+
