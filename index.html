@@ -11,10 +11,44 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=PT+Serif+Caption|Playfair+Display+SC" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+        
 
     </head>
     
 <body>
+    <!-- PopUp for SignUp -->
+    <div class="signup-wrapper">
+        <div class="signup-content animated fadeIn">
+            <a href="#"><img class="close-signup close-popup" src="img/xx.png" title="Close" /></a>
+            <h1>Sign-up Form</h1>
+            <hr>
+            <form>
+                <input type="text" placeholder="Full Name" required></input>
+                <input type="text" placeholder="UserName" required></input>
+                <input type="text" placeholder="Email" required></input>
+                <input type="password" placeholder="Password" required></input>
+                <input type="password" placeholder="Retype Password" required></input>
+                <button onclick="validation();" type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PopUp for Login -->
+    <div class="login-wrapper">
+        <div class="login-content animated bounceInUp">
+            <a href="#"><img class="close-signup close-popup" src="img/xx.png" title="Close" /></a>
+            <h1>Login</h1>
+            <hr>
+            <form>
+                <input type="text" placeholder="UserName" required></input>
+                <input type="password" placeholder="Password" required></input>
+                <button onclick="validation();" type="submit">Login</button>
+                <p class="small-text">Not registered yet?&nbsp;<a href="#" id="register">&nbsp;Create an Account</a></p>
+            </form>
+        </div>
+    </div>
 
     <!-- TOP LINE -->
     <div class="top-line"></div>
@@ -38,9 +72,9 @@
 
         <div class="header-links">
             <ul class="small-text">
-                <li><a href="#">Sign Up</a></li>
+                <li><a id="signup-popup" href="#">Sign Up</a></li>
                 <li>|</li> 
-                <li><a href="#">Login</a></li>
+                <li><a id="login-popup" href="#">Login</a></li>
                 <li>|</li>
                 <li><a href="#">RSS Feeds</a></li>
                 <li>|</li>
@@ -54,12 +88,21 @@
     <div class="menu-wrapper">
         <div class="menu-bar">
             <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">STYLE DEMO</a></li>
-                <li><a href="#">FULL WIDTH</a></li>
-                <li><a href="#">PORTFOLIO</a></li>
-                <li><a href="#">GALLERY</a></li>
-                <li><a href="#">DROPDOWN</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Style Demo</a></li>
+                <li><a href="#">Full Width</a></li>
+                <li><a href="#">Porfolio</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li class="dropdown">
+                    <a class="dropbtn" href="#">Dropdown</a>
+                        <div class="dropdown-content">
+                            <a class="atext" href="#">Anime Link 1</a>
+                            <a class="atext" href="#">Anime Link 2</a>
+                            <a class="atext" href="#">Anime Link 3</a>
+                            <a class="atext" href="#">Anime Link 4</a>
+                            <a class="atext" href="#">Anime Link 5</a>
+                        </div>
+                </li>
                 <li>
                     <form class="form-wrapper">
                         <input type="text" placeholder="Search Our Website..."></input>
@@ -114,23 +157,23 @@
     <div class="middle-wrapper">
         <div class="middle-icons">
             <div class="icon-contents">
-                <span class="fa fa-users"></span>
-                <h4>Internet Users</h4>
+                <a href="#"><span class="fa fa-users"></span>
+                <h4>Anime Fans</h4></a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non diam erat. In fringilla massa ut nisi ullamcorper pellentesque.</p>
             </div>
             <div class="icon-contents">
-                <span class="fa fa-globe"></span>
-                <h4>Global Warming</h4>
+                <a href="#"><span class="fa fa-globe"></span>
+                <h4>Anime Sites</h4></a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non diam erat. In fringilla massa ut nisi ullamcorper pellentesque.</p>
             </div>
             <div class="icon-contents">
-                <span class="fa fa-gears"></span>
-                <h4>Settings</h4>
+                <a href="#"><span class="fa fa-image"></span>
+                <h4>Anime Wallpaper</h4></a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non diam erat. In fringilla massa ut nisi ullamcorper pellentesque.</p>
             </div>
-            <div class="icon-contents car">
-                <span class="fa fa-car"></span>
-                <h4>About Cars</h4>
+            <div class="icon-contents play">
+                <a href="#"><span class="fa fa-play-circle"></span>
+                <h4>Watch Anime Series</h4></a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non diam erat. In fringilla massa ut nisi ullamcorper pellentesque.</p>
             </div>
         </div>
@@ -220,7 +263,39 @@
                 
             });
         });
-    </script>   
+    </script>
+
+    <script>
+            $(document).ready(function()
+            {
+                $('#signup-popup').click(function()
+                {
+                    $('.signup-wrapper').show();
+                });
+
+                $('.close-popup').click(function()
+                {
+                    $('.signup-wrapper').hide();
+                });
+
+                $('#login-popup').click(function()
+                {
+                    $('.login-wrapper').show();
+                });
+
+                $('.close-popup').click(function()
+                {
+                    $('.login-wrapper').hide();
+                });
+
+                $('#register').click(function()
+                {
+                    $('.login-wrapper').hide()
+                    $('.signup-wrapper').show();
+                });
+
+            });
+    </script>
 
 </body>
 </html>
