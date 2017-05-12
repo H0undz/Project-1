@@ -18,6 +18,7 @@
     </head>
     
 <body>
+<div class="body-wrapper">
     <!-- PopUp for SignUp -->
     <div class="signup-wrapper">
         <div class="signup-content animated fadeIn">
@@ -93,8 +94,8 @@
                 <li><a href="#">Full Width</a></li>
                 <li><a href="#">Porfolio</a></li>
                 <li><a href="#">Gallery</a></li>
-                <li class="dropdown">
-                    <a class="dropbtn" href="#">Dropdown</a>
+                <li class="drop-down">
+                    <a class="dropbtn" role="button">Dropdown&nbsp;<span class="caret"></span></a>
                         <div class="dropdown-content">
                             <a class="atext" href="#">Anime Link 1</a>
                             <a class="atext" href="#">Anime Link 2</a>
@@ -105,11 +106,32 @@
                 </li>
             </ul>
         </div>
+        <a class="menuToggle" role="button"><span class="fa fa-navicon toggleNav"></span></a>
             <div class="form-wrapper">
                 <input type="text" placeholder="Search Our Website..."></input>
                 <button class="search">Search</button>
             </div>
     </div>
+    <!-- Hidden Menu Bar -->
+    <div class="menu-bar-hidden">
+            <ul>
+                <li class="wow slideLeft"><a href="#">Home</a></li>
+                <li class="wow slideRight" data-wow-delay="20s"><a href="#">Style Demo</a></li>
+                <li class="wow slideLeft"><a href="#">Full Width</a></li>
+                <li class="wow slideRight"><a href="#">Porfolio</a></li>
+                <li class="wow slideLeft"><a href="#">Gallery</a></li>
+                <li class="drop-down wow slideRight">
+                    <a class="dropbtn" role="button">Dropdown&nbsp;<span class="caret"></span></a>
+                        <div class="dropdown-content">
+                            <a class="atext" href="#">Anime Link 1</a>
+                            <a class="atext" href="#">Anime Link 2</a>
+                            <a class="atext" href="#">Anime Link 3</a>
+                            <a class="atext" href="#">Anime Link 4</a>
+                            <a class="atext" href="#">Anime Link 5</a>
+                        </div>
+                </li>
+            </ul>
+        </div>
 
     <!-- Carousel Container -->
     <div class="carousel-wrapper">
@@ -132,22 +154,23 @@
                     <img src="img/deadly.jpg">
                 </div>
             </div>
+            <div class="carousel-controls">
+                <a href="#slideMe" class="left carousel-control" data-slide="prev">
+                    <span class="fa fa-chevron-circle-left"></span>
+                </a>
 
-            <ol class="carousel-indicators indicators-color">
-                <li data-target="#slideMe" data-slide-to="0"></li>
-                <li data-target="#slideMe" data-slide-to="1"></li>
-                <li data-target="#slideMe" data-slide-to="2" class="active"></li>
-                <li data-target="#slideMe" data-slide-to="3"></li>
-                <li data-target="#slideMe" data-slide-to="4"></li>
-            </ol>
+                <ol class="carousel-indicators indicators-color">
+                    <li data-target="#slideMe" data-slide-to="0"></li>
+                    <li data-target="#slideMe" data-slide-to="1"></li>
+                    <li data-target="#slideMe" data-slide-to="2" class="active"></li>
+                    <li data-target="#slideMe" data-slide-to="3"></li>
+                    <li data-target="#slideMe" data-slide-to="4"></li>
+                </ol>
 
-
-            <a href="#slideMe" class="left carousel-control" data-slide="prev">
-                <span class="fa fa-chevron-circle-left"></span>
-            </a>
-            <a href="#slideMe" class="right carousel-control" data-slide="next">
-                <span class="fa fa-chevron-circle-right"></span>
-            </a>
+                <a href="#slideMe" class="right carousel-control" data-slide="next">
+                    <span class="fa fa-chevron-circle-right"></span>
+                </a>
+            </div>
         </div>      
     </div>
 
@@ -209,7 +232,7 @@
     <footer>
             <div class="footer-wrapper">
                 <ul>
-                    <li>
+                    <li class="contact">
                         <h2>Contact Details</h2><br>
                         <p>Convallisijusto vestas mus pellentum aenean sapibulum in aliquam volut pat integest nulla.</p><br>
                         <p>Tel: XXX XXX XXXX</p>
@@ -225,14 +248,14 @@
                             <li><a href="#">Link Text Four</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="blog">
                         <h2>From The Blog</h2><br>
                         <p class="post-title">Blog Post Title</p>
                         <p>Posted by Admin on Friday, 6th April 2019</p>
                         <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed facilispede estibulum.</p>
                         <a class="blog-link" href="#">Read More »</a>
                     </li>
-                    <li>
+                    <li class="wrapper-sign">
                         <h2>Contact Us</h2><br>
                         <form class="signup">
                             <input type="text" placeholder="Full Name"></input>
@@ -256,11 +279,15 @@
 
     <script>
         $(function() {
-            $('.toggleNav').on('click',function() {
-                $('.menu ul').toggleClass('open');
+            $('a .toggleNav').on('click',function() {
+                $('.menu-bar-hidden').slideToggle(500)
+                $('.dropdown-content').hide();
                 
             });
         });
+            $('.dropbtn').on('click',function() {
+                $('.dropdown-content').toggle();
+            });
     </script>
 
     <script>
@@ -293,7 +320,10 @@
                 });
 
             });
-    </script>
 
+              new WOW().init();
+             
+    </script>
+</div>
 </body>
 </html>

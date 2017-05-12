@@ -14,6 +14,11 @@ html {
   box-sizing: inherit;
 }
 
+.body-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 .small-text {
   font-size: 12.5px;
   font-weight: 600;
@@ -189,8 +194,6 @@ form input:focus {
 /*-- Header --*/
 
 .header {
-  margin: 0 auto;
-  max-width: 960px;
   background-color: #fff;
   padding-bottom: 30px;
 }
@@ -280,18 +283,58 @@ form input:focus {
 }
 
 
+
+/*-- Hidden Nav --*/
+
+.menu-bar-hidden {
+  display: none;
+}
+
+.menu-bar-hidden ul li {
+  text-decoration: none;
+  list-style: none;
+  padding: 15px 15px;
+  margin: 0 10px;
+  max-width: 200px;
+}
+
+.menu-bar-hidden ul li:hover {
+  background-color: #81b300;
+}
+
+.menu-bar-hidden ul li a {
+  color: #fff;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.menu-bar-hidden ul li a:hover, .menu-bar-hidden ul li a:focus {
+  text-decoration: none;
+}
+
+
+
+
 /*-- Menu Bar --*/
+
+.toggleNav {
+  display: none;
+}
+
+.menu-wrapper .menuToggle, .menu-wrapper .menuToggle:hover, .menu-wrapper .menuToggle:focus {
+  text-decoration: none;
+  color: #000;
+  font-size: 30px;
+}
 
 .menu-wrapper {
   background-color: #81b300;
-  margin: 0 auto;
-  max-width: 960px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
   font-family: 'Playfair Display SC', serif;
 }
+
 
 .menu-bar ul li {
   list-style: none;
@@ -322,7 +365,7 @@ form input:focus {
 }
 
 .form-wrapper {
-
+  padding: 10px 0;
 }
 
 .form-wrapper input {
@@ -339,6 +382,10 @@ form input:focus {
 }
 
 /*-- DropDown --*/
+
+.dropbtn:focus {
+  text-decoration: none;
+}
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -358,11 +405,11 @@ form input:focus {
   margin-top: 10px;
 }
 
-.dropdown .dropdown-content .atext {
+.drop-down .dropdown-content .atext {
   color: #fff;
 }
 
-.dropdown .dropdown-content .atext:hover {
+.drop-down .dropdown-content .atext:hover {
   background-color: #1f1f1f;
 }
 
@@ -379,18 +426,12 @@ form input:focus {
   border-radius: 0px;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-
 
 /*-- Carousel --*/
 
+
+
 .carousel-wrapper {
-  max-width: 960px;
-  margin: 0 auto;
   background-color: #e7e7e7;
   padding: 30px 0;
 }
@@ -427,21 +468,21 @@ form input:focus {
   background-image: none;
   opacity: 1;
   color: #000;
-  margin-top: 375px;
 }
 
-.carousel-control.left {
-   margin-left: 350px;
+.carousel-inner {
+   margin-bottom:20px;
 }
 
-.carousel-control.right {
-  margin-right: 350px;
+.carousel-controls{
+  position:relative; 
+  width:150px;
+  margin:0 auto;
+  padding-top: 20px;
 }
 
-.carousel-indicators {
-  bottom:-50px;
-  max-width: 90px;
-  margin-left: -45px;
+.carousel-indicators{
+   top:5px; 
 }
 
 .indicators-color li {
@@ -452,17 +493,12 @@ form input:focus {
 
 }
 
-.carousel-inner {
-   margin-bottom:25px;
-}
 
 
 
 /*-- Middle Content --*/
 
 .middle-wrapper {
-  max-width: 960px;
-  margin: 0 auto;
   background-color: #fff;
   padding: 30px;
 }
@@ -470,6 +506,7 @@ form input:focus {
 .middle-icons {
   display: flex;
 }
+
 
 .middle-icons .icon-contents {
   text-align: center;
@@ -511,7 +548,7 @@ form input:focus {
 }
 
 hr {
-  background-color: gray;
+  background-color: #333;
   height: 1px;
 }
 
@@ -519,6 +556,10 @@ hr {
 
 .middle-anime-contents {
   display: flex;
+}
+
+.anime-contents a {
+  float: right;
 }
 
 .middle-anime-contents .anime-contents {
@@ -531,14 +572,13 @@ hr {
 
 .middle-anime-contents .anime-contents a {
   color: #81b300;
-  float: right;
+
 }
 
 .middle-anime-contents .anime-contents a:hover, .middle-anime-contents .anime-contents a:focus {
   color: #81b300;
   text-decoration: none;
 }
-
 
 
 .middle-anime-contents .anime-contents .white-bg{
@@ -549,7 +589,7 @@ hr {
   border: 1px solid #e2e2e2;
 }
 
-.middle-anime-contents .anime-contents .white-bg img {
+.anime-contents img {
   max-width: 200px;
   max-height: 130px;
   width: 200px;
@@ -569,39 +609,34 @@ h5 {
 /*-- Footer Content --*/
 
 footer {
-  margin-top: -20px;
+  background-color: #3b3b3b;
 }
 
 .footer-wrapper {
-  max-width: 960px;
-  background-color: #3b3b3b;
-  margin: 0 auto;
-  padding: 30px;
+  margin: 0 30px;
   color: #999999;
   font-size: 11px;
-
 }
 
 .footer-wrapper ul {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: space-between;
+
 }
 
 .footer-wrapper ul li {
   list-style: none;
-  max-width: 225px; 
-  width: 225px;
   margin-right: 20px;
+  width: 210px;
 }
 
-.footer-wrapper ul .footer-links ul  {
+.footer-links ul  {
   display: flex;
   flex-direction: column;
 }
 
-.footer-wrapper ul .footer-links ul li {
+.footer-links ul li {
   border-bottom: 1px solid #484848;
   margin-bottom: 10px;
   padding-bottom: 5px;
@@ -626,7 +661,12 @@ h2 {
   float: right;
 }
 
-.footer-wrapper ul li:last-child {
+.blog-link:hover, .blog-link:focus {
+  color: #81b300;
+  text-decoration: none;
+}
+
+.footer-wrapper ul li.wrapper-sign {
   margin-right: 0;
 }
 
@@ -639,8 +679,8 @@ h2 {
 .signup input {
   margin-bottom: 10px;
   padding: 8px;
-  max-width: 225px; 
-  width: 225px;
+  max-width: 210px; 
+  width: 210px;
   background-color: #1f1f1f;
   border: none;
   border-radius: 5px;
@@ -669,13 +709,38 @@ h2 {
 @media screen and (max-width: 768px) {
   .icon-wrapper ul {margin: 0 auto; float: none; text-align: center; max-width: 270px;}
   .header-links ul, .header-links {text-align: center; margin: 0 auto; float: none; padding: 0;}
-
+  .menu-bar {display: none;}
+  a .toggleNav {display: block;}
+  .menu-bar-hidden.open {display: block;}
+  .signup-content form input {padding: 5px;}
+  .signup-content form button {padding: 5px;}
+  .signup-content form {margin: 5px 0}
+  .signup-content h1 {font-size: 150%;}
+  .signup-content { margin-bottom: 20px;}
+  .login-content form input {padding: 8px;}
+  .login-content form button {padding: 8px;}
+  .login-content form {margin: 5px 0}
+  .login-content h1 {font-size: 180%;}
+  .login-content form p {margin: 10px 10px;}
+  .copyright {flex-direction: column; text-align: center;}
 }
 
 
 @media screen and (max-width: 992px) {
   .login-content, .signup-content {left: 20%;}
-  .form-wrapper {order: -1;}
   .menu-bar ul {display: flex; justify-content: space-between; margin-left: 20px;}
+  .middle-anime-contents {flex: 1 1 50%}
+  .middle-icons, .middle-anime-contents, .footer-wrapper ul {flex-wrap: wrap;}
+  .icon-contents, .anime-contents{flex: 1 1 33.33%;}
+  .anime-contents .white-bg {margin: 0 auto;}
+  .anime-contents {padding-bottom: 20px;}
+  .footer-wrapper ul li {flex: 1 1 33.33%; margin-bottom: 20px;}
+  .footer-wrapper ul .blog {margin-right: 40px;}
+  .footer-wrapper ul li.footer-links {margin-right: -20px;}
+  .footer-wrapper ul .footer-links, .footer-wrapper ul .contact {width: 125px;}
+}
 
+@media screen and (max-width: 380px) {
+  .menu-wrapper {padding:0 10px;}
+  .form-wrapper input {width: 200px;}
 }
